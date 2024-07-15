@@ -17,9 +17,14 @@
         .hide-keyboard {
             display: none;
             position: fixed;
-            top: 50%;
+            top: 55%;
             right: 0;
-            transform: translateY(-50%);
+            transform: translateY(50%);
+            background-color: #585858;
+            color: #fff;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 6px;
         }
     </style>
 </head>
@@ -30,7 +35,7 @@
     <form action="#">
         <input type="text" placeholder="Введите имя">
     </form>
-    <button class="hide-keyboard" style="display: none">Скрыть клавиатуру</button>
+    <button class="hide-keyboard">Скрыть клавиатуру</button>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
