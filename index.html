@@ -1,65 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test og:image</title>
-    <meta property="og:image" content="test.jpg">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:title" content="Image">
-    <meta property="og:description" content="Testing og:image">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="test.jpg">
-    <link rel="icon" href="favicon.webp" type="image/x-icon">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"
+    />
+    <title>pos-above-keyboard</title>
     <style>
-        .hide-keyboard {
-            display: none;
-            position: fixed;
-            top: 55%;
-            right: 0;
-            transform: translateY(50%);
-            background-color: #585858;
-            color: #fff;
-            padding: 8px 16px;
-            border: none;
-            border-radius: 6px;
-        }
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      #button {
+        position: fixed;
+        width: 100%;
+        bottom: 10px;
+        background-color: rebeccapurple;
+        line-height: 40px;
+        text-align: center;
+      }
     </style>
-</head>
-
-<body>
-    <h3>Test</h3>
-    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam, omnis! Cum, ipsam inventore magnam maiores amet, iure nisi illo minima, excepturi deleniti nesciunt veniam consequatur libero! Cumque error nulla veritatis quas corporis, reprehenderit, eius quisquam nobis dolorum saepe laboriosam quasi! Mollitia cupiditate deleniti vitae nulla nobis. Recusandae at libero, nulla autem, quas animi enim labore reprehenderit nostrum id possimus? Totam, cumque minus aliquid quas tenetur eos dolor tempora non a nobis deleniti, aliquam ipsam expedita accusantium dolorem numquam eveniet corrupti atque doloremque maxime! In ab aliquam dolorum labore blanditiis corrupti, fugiat numquam! Veniam incidunt error sunt doloribus suscipit dolorem iste, sequi quibusdam ad eos hic illum possimus deleniti iusto eius deserunt voluptas veritatis labore est, blanditiis sapiente. Omnis ad non culpa quo quisquam nam? Iste quisquam deserunt velit soluta, perferendis suscipit molestias, voluptatem hic totam vitae molestiae? Provident, minus? Nesciunt eligendi perspiciatis obcaecati nemo esse necessitatibus ducimus ad, excepturi saepe, repellat maiores tempore natus quasi! Veritatis placeat minima perferendis voluptas eius quasi, laboriosam ut tenetur pariatur tempora necessitatibus dicta et consequatur eum suscipit laudantium nostrum repellat vel, sequi, vero aliquam labore aut accusamus error. Nulla animi modi veniam in labore. Quibusdam possimus dolorum quasi, tempora odit facere doloribus dolorem repellat similique est enim aspernatur perspiciatis obcaecati at. Maiores voluptatibus quae dolor animi maxime velit consectetur dolorum iste excepturi voluptatum doloribus dicta aut, pariatur voluptate, alias hic nesciunt omnis labore sunt suscipit, fugit error quos eveniet delectus. Pariatur dolore libero saepe quae obcaecati dignissimos, recusandae porro incidunt animi suscipit? Neque unde et asperiores, obcaecati voluptates quisquam quo ex aperiam labore tempore repellat accusamus magni, repudiandae porro nisi saepe? Similique placeat obcaecati exercitationem minus totam. Veniam pariatur quod officiis placeat facere rerum mollitia quidem incidunt id quasi inventore amet, modi similique corrupti voluptatem! Magnam labore debitis repellendus vitae nisi, sed id fugit? Fugiat, debitis delectus. Fugiat, porro consectetur. Magnam pariatur mollitia iusto, laborum incidunt possimus illo enim dolores recusandae, doloribus ipsam saepe. Soluta libero voluptas voluptate, commodi sit perspiciatis, at nobis aliquid quod dicta alias? Atque quo, unde dolorum, officiis reprehenderit assumenda debitis laboriosam omnis voluptate quia adipisci tempora similique saepe voluptatem ex esse, eum expedita est accusantium. Accusamus id dolorum exercitationem nisi laboriosam fugiat nulla, quos obcaecati inventore eveniet! Sed labore itaque aperiam? Sint a aliquam facere delectus amet ipsa itaque illum excepturi sit et repudiandae, sunt reprehenderit temporibus velit saepe odio aliquid vitae corrupti tempora accusamus! Illum, numquam ipsum. Cumque dolores recusandae doloremque atque. Dignissimos dolore nam repellendus illum ipsum, sint laudantium earum aspernatur. Nulla ad recusandae similique! Dolor, at. Debitis ipsum veritatis animi dolorum possimus at nesciunt error sunt laudantium ex hic eaque exercitationem necessitatibus aperiam suscipit voluptatem asperiores ea incidunt aspernatur maiores ipsam quaerat, tempora nisi dolor? Reiciendis necessitatibus totam consequatur provident optio doloremque soluta maiores quia fugit laborum ipsam a quam expedita dolor nulla incidunt, vero dolorem at sunt esse fugiat unde sequi porro magnam. Corporis doloribus exercitationem libero natus inventore praesentium voluptatibus quod hic, quis accusantium repellat accusamus esse nihil consequuntur, non quas corrupti sed quibusdam?</p>
-    <form action="#">
-        <input type="text" placeholder="Введите имя">
-    </form>
-    <button class="hide-keyboard">Скрыть клавиатуру</button>
+  </head>
+  <body>
+    <input
+      type="text"
+      inputmode="decimal"
+      value="0.99"
+      id="input"
+      onblur="blurHandler()"
+    />
+    <div id="button" onclick="inputBlur()">Button</div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const inputs = document.querySelectorAll('input');
-            const hideKeyboardBtn = document.querySelector('.hide-keyboard');
+      const button = document.getElementById("button");
+      const input = document.getElementById("input");
+      let height = window.visualViewport.height;
+      const viewport = window.visualViewport;
 
-            inputs.forEach(input => {
-                input.addEventListener('focus', function() {
-                    hideKeyboardBtn.style.display = 'block';
-                })
-                input.addEventListener('blur', function() {
-                    hideKeyboardBtn.style.display = 'none';
-                })
-            });
+      window.addEventListener("scroll", inputBlur);
+      window.visualViewport.addEventListener("resize", resizeHandler);
 
-            hideKeyboardBtn.addEventListener('click', function() {
-                inputs.forEach(input => {
-                    if (document.activeElement === input) {
-                        input.blur();
-                    }
-                })
-            })
-        })
+      function inputBlur() {
+        input.blur();
+      }
+
+      function resizeHandler() {
+        if (!/iPhone|iPad|iPod/.test(window.navigator.userAgent)) {
+          height = viewport.height;
+        }
+        button.style.bottom = `${height - viewport.height + 10}px`;
+      }
+
+      function blurHandler() {
+        button.style.bottom = "10px";
+      }
     </script>
-</body>
-
+  </body>
 </html>
